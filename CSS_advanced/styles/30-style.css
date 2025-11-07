@@ -704,6 +704,14 @@ ul.row {
     }
 
     .card-work .card-title {
+        text-align: center;
+        margin: 0;
+        opacity: 0;
+        height: 100%;
+        position: relative;
+    }
+
+    .card-work .card-title a {
         display: block;
         text-decoration: none;
         padding: 45%;
