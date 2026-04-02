@@ -1,0 +1,18 @@
+/* assigns 2 variables
+ text color #3D3D3D to body and p
+ and The background color #6D6D6D to body and h2 */
+ $text-primary: #3D3D3D;
+ $background-main: #6D6D6D;
+
+ body {
+    color: $text-primary;
+    background-color: $background-main;
+ }
+
+ p {
+    color: $text-primary;
+ }
+
+ h2 {
+    background-color: $background-main;
+ }
