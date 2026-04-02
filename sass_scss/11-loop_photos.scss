@@ -5,6 +5,6 @@
 
 @each $name in source.$list-names {
     .photo-#{$name} {
-        background: image-url("photos/{$name}.jpg") no-repeat;
+        background: image-url("photos/#{$name}.jpg") no-repeat;
     }
 }
