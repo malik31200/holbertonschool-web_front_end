@@ -1,7 +1,7 @@
 /* Nested declarations for buttons */
 button {
     color: #FF0000;
-    :hover {
+    &:hover {
         color: #00FF00;
     }
 }
