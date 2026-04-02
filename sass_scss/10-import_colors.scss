@@ -1,0 +1,15 @@
+/* Use @import of the file 10-colors.scss
+to use his variables */
+@import '10-colors';
+
+.red {
+    color: $red;
+}
+
+.green {
+    color: $green;
+}
+
+.blue {
+    color: $blue;
+}
