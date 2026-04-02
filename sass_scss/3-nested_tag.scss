@@ -1,0 +1,12 @@
+/* Assigns no margin or padding to boody
+margin 10px to all p inside body
+in using nested declaration
+*/
+
+body {
+    margin: 0px;
+    padding: 0px;
+        p {
+            margin: 10px;
+        }
+}
