@@ -1,0 +1,26 @@
+/* use extend for font size and text color */
+%font-shared {
+    font-size: 12px;
+}
+
+%colorsucc {
+    color: #00FF00;
+}
+
+%colorwrng {
+    color: #FF0000;
+}
+
+.info {
+    @extend %font-shared;
+}
+
+.success {
+    @extend %font-shared;
+    @extend %colorsucc;
+}
+
+.warning {
+    @extend %font-shared;
+    @extend %colorwrng;
+}
