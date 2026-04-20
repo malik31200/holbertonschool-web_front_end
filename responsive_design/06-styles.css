@@ -360,7 +360,8 @@
     align-items: center;
   }
 
-  /* menu btn */
+  /* Menu btn
+      ============================= */
   .header .menu-btn {
     display: none;
   }
