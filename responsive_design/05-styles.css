@@ -306,19 +306,8 @@
         max-height: 0;
         transition: max-height .2s ease-out;
     }
-  }
 
-  /* Header
-      ============================= */
-
-  .header {
-    padding: var(--header-padding);
-    position: relative;
-    z-index: 3;
-    background: transparent;
-  }
-
-  .header .menu-icon {
+    .header .menu-icon {
     cursor: pointer;
     padding: 2.5rem;
     position: relative;
@@ -351,6 +340,17 @@
 
   .header .menu-icon .navicon::after {
     top: -.7rem;
+  }
+  }
+
+  /* Header
+      ============================= */
+
+  .header {
+    padding: var(--header-padding);
+    position: relative;
+    z-index: 3;
+    background: transparent;
   }
 
   .header-container {
