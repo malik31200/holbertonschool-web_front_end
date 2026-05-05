@@ -360,7 +360,7 @@ a:active {
     top: 0;
     z-index: 10;
     transform: translateY(-1rem);
-    transform: transform .2s ease-in-out, opacity .2s ease-in-out;
+    transition: transform .2s ease-in-out, opacity .2s ease-in-out;
 }
 
 .skip-link:focus {
