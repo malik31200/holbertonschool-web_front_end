@@ -33,8 +33,8 @@ function main() {
     document.body.appendChild(btnScreamMode);
 
     btnSpooky.addEventListener("click", spooky);
-    btnDarkMode.addEventListener("click", darkMode);
-    btnScreamMode.addEventListener("click", screamMode);
+    btnDarkMode.addEventListener("click", dark mode);
+    btnScreamMode.addEventListener("click", scream mode);
 }
 
 main();
