@@ -10,14 +10,17 @@ class studentHogwarts {
 
     setName(newName) {
         this.name = newName;
+        return this;
     }
 
     rewardStudent() {
         this.#changeScoreBy(1);
+        return this;
     }
 
     penalizeStudent() {
         this.#changeScoreBy(-1);
+        return this;
     }
 
     getScore() {
