@@ -25,7 +25,7 @@ function main() {
     btnDarkMode.textContent = "Dark mode";
 
     let btnScreamMode = document.createElement("button");
-    btnScreamMode.textContent = "ScreamMode";
+    btnSc.textContent = "Scream mode";
 
     // Add in the page
     document.body.appendChild(btnSpooky);
@@ -33,8 +33,8 @@ function main() {
     document.body.appendChild(btnScreamMode);
 
     btnSpooky.addEventListener("click", spooky);
-    btnDarkMode.addEventListener("click", dark mode);
-    btnScreamMode.addEventListener("click", scream mode);
+    btnDarkMode.addEventListener("click", darkMode);
+    btnScreamMode.addEventListener("click", screamMode);
 }
 
 main();
