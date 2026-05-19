@@ -24,10 +24,12 @@ function countPrimeNumbers(){
 // Start chrono
 const start = performance.now();
 
-// run 100 times
-for (let i = 0; i < 100; i++) {
+// setTimeout do most of the calculation at the end of the execution stack
+setTimeout (() => {
+    for (let i = 0; i < 100; i++) {
     countPrimeNumbers();
-}
+    }
+}, 0);
 
 
 // End chrono
