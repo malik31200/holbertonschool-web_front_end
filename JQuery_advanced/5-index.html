@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 5</title>
+
+        <!-- Load jQuery (slim + minified version) -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+        <script type="application/javascript">
+            $(document).ready(function () {
+                function createFamilyTree() {
+
+                    $("body").append(
+                        $("<table></table>").append(
+                            $("<thead></thead>").append(
+                                $("<tr></tr>").append(
+                                    $("<th></th>").text("Firstname"),
+                                    $("<th></th>").text("Lastname")
+                                )
+                            ),
+                            $("<tbody></tbody>")
+                        )
+                    );
+                }
+
+                // add a new member
+                function addNewMember(firstName, lastName) {
+                    // Create of the row
+                    const row = $("<tr></tr>");
+
+                    // cells first + lastname
+                    row.append(
+                        $("<td></td>").text(firstName),
+                        $("<td></td>").text(lastName)
+                    );
+
+                    // cell delete
+                    const removeCell = $("<td></td>").text("(x)");
+
+                    // css
+                    removeCell.css("background-color", "orange");
+
+                    // click
+                    removeCell.click(function () {
+                        row.remove();
+                    });
+
+                    // add cell remove to the row
+                    row.append(removeCell);
+
+                    // add row to tbody
+                    $("tbody").append(row);
+                }
+
+                // create table
+                createFamilyTree();
+
+                // add member
+                addNewMember("Guillaume", "Salva");
+                addNewMember("Arielle", "Snizt");
+                addNewMember("Fanette", "Snizt");
+                addNewMember("Gerard", "Snizt");
+                addNewMember("Victor", "Salva");
+            });
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
