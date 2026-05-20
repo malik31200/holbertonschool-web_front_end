@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "fd",
+      "author": "fffff",
+      "id": 2
+    },
+    {
+      "title": "fd",
+      "author": "fffff",
+      "id": 3
+    },
+    {
+      "title": "f",
+      "author": "f",
+      "id": 4
+    },
+    {
+      "title": "Paul",
+      "author": "the book",
+      "id": 5
+    },
+    {
+      "title": "la vie",
+      "author": "Malik",
+      "id": 6
+    },
+    {
+      "title": "la cité bleue",
+      "author": "Mahmoud",
+      "id": 7
+    },
+    {
+      "title": "la folie",
+      "author": "le fou",
+      "id": 8
+    },
+    {
+      "title": "le foot",
+      "author": "Gaby",
+      "id": 9
+    },
+    {
+      "title": "Toulouse",
+      "author": "Mike",
+      "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
