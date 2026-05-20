@@ -27,7 +27,7 @@
                 }
 
                 // add a new member
-                function addNewMember(firstName, lastName) {
+                function addNewMember(firstName, lastName, position) {
                     // Create of the row
                     const row = $("<tr></tr>");
 
@@ -51,12 +51,71 @@
                     // add cell remove to the row
                     row.append(removeCell);
 
-                    // add row to tbody
-                    $("tbody").append(row);
+                    if (position === "before") {
+                        $("tbody").prepend(row);
+                    } else {
+                        $("tbody").append(row);
+                    }
+                }
+
+                // Create form
+                function createForm(){
+                    const form = $("<form></form>");
+
+                    // first input
+                    form.append(
+                        $("<input type='text'>")
+                    );
+
+                    // second input
+                    form.append(
+                        $("<input type='text'>")
+                    );
+
+                    // select
+                    const select = $("<select></select>");
+
+                    select.append(
+                        $("<option></option>")
+                            .attr("value", "before")
+                            .text("Before"),
+
+                        $("<option></option>")
+                            .attr("value", "after")
+                            .text("After")
+                    );
+
+                    form.append(select)
+
+                    // submit
+                    form.append(
+                        $("<input type='submit'>")
+                        .val("Submit")
+                    );
+
+                    // add form before table
+                    $("table").before(form);
+
+                    // submit action
+                    form.submit(function (event) {
+
+                        // prevent page reload
+                        event.preventDefault();
+
+                        // fetch values
+                        const firstName = $("input:first").val();
+                        const lastName = $("input:nth-of-type(2)").val();
+                        const position = $("select").val();
+
+                        addNewMember(firstName, lastName, position);
+
+                    });
+
                 }
 
                 // create table
                 createFamilyTree();
+                createForm();
 
                 // add member
                 addNewMember("Guillaume", "Salva");
