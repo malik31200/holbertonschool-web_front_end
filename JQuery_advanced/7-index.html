@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 6</title>
+
+        <!-- Load jQuery (slim + minified version) -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+        <script type="application/javascript">
+            $(document).ready(function () {
+                function createSearchForm() {
+                    $("body").append(
+                        $("<input type='text'>"),
+                        $("<input type='submit'>").val("Submit"),
+                        $("<ul></ul>")
+                    );
+
+                    // click submit
+                    $("input[type='submit']").click(function (event) {
+                        event.preventDefault();
+                        
+                        const search = $("input[type='text']").val();
+
+                        queryWikipedia(search);
+
+                        $("input[type='text']").val("");
+                    });
+                }
+
+                // add article
+                function addNewArticle(id, title, snippet) {
+                    const li = $("<li></li>");
+
+                    // first paragraph
+                    const firstParagraph = $("<p></p>").append(
+                        $("<span></span>").text(id + ' - '),
+                        $("<b></b>").text(title)
+                    );
+                     // second paragraph
+                     const secondParagraph = $("<p></p>").html(snippet);
+
+                     li.append(firstParagraph, secondParagraph);
+
+                     $("ul").append(li);
+                }
+
+                function queryWikipedia(search) {
+                    const data = {
+                        action:"query",
+                        list: "search",
+                        srsearch: search,
+                        format: "json",
+                        origin: "*"
+                    };
+
+                    $.get(
+                        "https://en.wikipedia.org/w/api.php",
+                        data,
+                        function (response) {
+                            $("ul").html("");
+
+                            response.query.search.forEach(function (result) {
+                                addNewArticle(
+                                    result.pageid,
+                                    result.title,
+                                    result.snippet
+                                );
+                            });
+                        }
+                    );
+                }
+
+                createSearchForm();
+            });
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
