@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login to the website</h1>
+    <input type="text" id="firstname" placeholder="Firstname">
+    <input type="email" id="email" placeholder="Email">
+    <button onclick="setCookies()">Log me in</button>
+
+    <br></br>
+
+    <h1>Cookies</h1>
+    <button onclick="showCookies()">Show the cookies</button>
+
+    <script>
+        function setCookies() {
+            const firstname = document.getElementById("firstname").value;
+            const email = document.getElementById("email").value;
+
+            const d = new Date();
+            d.setTime(d.getTime() + (10 * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = "firstname=" + firstname + ";" + expires + ";path/";
+            document.cookie = "email=" + email + ";" + expires + ";path/";
+        }
+
+        function showCookies() {
+            const p = document.createElement("p");
+
+            // fetch all cookies
+            const email = getCookie("email");
+            const firstname = getCookie("firstname");
+
+            p.innerHTML = `Email: ${email} - Firstname: ${firstname}`;
+
+            document.body.appendChild(p);
+        }
+
+        function getCookie(name) {
+            const cookies = document.cookie.split(";");
+
+            for (let i = 0; i < cookies.length; i++) {
+                let c = cookies[i];
+
+                // delete the spaces at beginning
+                while (c.charAt(0) === " ") {
+                    c = c.substring(1);
+                }
+
+                // check if the cookie starts with "name="
+                if (c.indexOf(name + "=") === 0) {
+                    return c.substring(name.length + 1);
+                }
+            }
+
+            return "";
+        }
+    </script>
+
+</body>
+</html>
