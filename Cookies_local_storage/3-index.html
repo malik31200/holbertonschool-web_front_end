@@ -30,26 +30,6 @@
             showWelcomeMessageOrForm();
         }
 
-        function getCookie(name) {
-            const cookies = document.cookie.split(";");
-
-            for (let i = 0; i < cookies.length; i++) {
-                let c = cookies[i];
-
-                // delete the spaces at beginning
-                while (c.charAt(0) === " ") {
-                    c = c.substring(1);
-                }
-
-                // check if the cookie starts with "name="
-                if (c.indexOf(name + "=") === 0) {
-                    return c.substring(name.length + 1);
-                }
-            }
-
-            return "";
-        }
-
         function showForm() {
             const welcomeMessage = document.getElementById("welcome-message");
             if(welcomeMessage) {
